@@ -1,3 +1,8 @@
+import homePicSrc from './img/link.png'
+import Pic1 from './img/Meat-skewer.png'
+import Pic2 from './img/Prime-meat-and-seafood-fry.png'
+import Pic3 from './img/Prime-poultry-curry.png'
+
 const buildBaseOn = (parent) => {
     const headline = document.createElement('h1');
     const headImg = document.createElement('img');
@@ -10,10 +15,13 @@ const buildBaseOn = (parent) => {
 const createHomeOn = (parent) => {
     const headline = document.createElement('h1');
     const text = document.createElement('div');
+    const homePic = new Image();
     headline.textContent = 'LINK RESTAURANT';
+    homePic.src = homePicSrc;
     text.textContent = 'Link Restaurant offers the best food in the area. You can experience all the dishes you can find on Hilaru Continent. Have a good meal!';
     parent.appendChild(headline);
     parent.appendChild(text);
+    parent.appendChild(homePic);
 }
 
 const createMenuBlock = (dish, imgSrc) => {
@@ -30,9 +38,9 @@ const createMenuBlock = (dish, imgSrc) => {
 
 const createMenuOn = (parent) => {
     const menu = document.createElement('div');
-    const block1 = createMenuBlock('Meat Skewer', '/src/img/Meat-skewer.png');
-    const block2 = createMenuBlock('Prime Poultry Curry', '/src/img/Prime-poultry-curry.png');
-    const block3 = createMenuBlock('Prime Meat and Seafood Fry', '/src/img/Prime-meat-and-seafood-fry.png');
+    const block1 = createMenuBlock('Meat Skewer', Pic1);
+    const block2 = createMenuBlock('Prime Poultry Curry', Pic3);
+    const block3 = createMenuBlock('Prime Meat and Seafood Fry', Pic2);
 
     menu.textContent = 'MENU';
     parent.appendChild(menu);
