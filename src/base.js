@@ -29,9 +29,16 @@ const createMenuBlock = (dish, imgSrc) => {
 }
 
 const createMenuOn = (parent) => {
-    createMenuBlock('Meat Skewer', '/src/img/Meat-skewer.png');
-    createMenuBlock('Prime Poultry Curry', 'src/img/Prime-poultry-curry.png');
-    createMenuBlock('Prime Meat and Seafood Fry', 'src/img/Prime-meat-and-seafood-fry.png');
+    const menu = createElement('div');
+    const block1 = createMenuBlock('Meat Skewer', '/src/img/Meat-skewer.png');
+    const block2 = createMenuBlock('Prime Poultry Curry', 'src/img/Prime-poultry-curry.png');
+    const block3 = createMenuBlock('Prime Meat and Seafood Fry', 'src/img/Prime-meat-and-seafood-fry.png');
+
+    menu
+}
+
+const createContact = (parent) => {
+    const 
 }
 
 
