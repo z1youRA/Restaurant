@@ -11,16 +11,16 @@ const createHomeOn = (parent) => {
     const headline = document.createElement('h1');
     const text = document.createElement('div');
     headline.textContent = 'LINK RESTAURANT';
-    text.content = 'Link Restaurant offers the best food in the area. You can experience all the dishes you can find on Hilaru Continent. Have a good meal!';
+    text.textContent = 'Link Restaurant offers the best food in the area. You can experience all the dishes you can find on Hilaru Continent. Have a good meal!';
     parent.appendChild(headline);
     parent.appendChild(text);
 }
 
 const createMenuBlock = (dish, imgSrc) => {
-    const block = document.createElement('div');
     const img = document.createElement('img');
     const dishName = document.createElement('div');
-    block.classList.add('block');
+    const block = document.createElement('div');
+    block.classList.add('menu-block');
     img.src = `${imgSrc}`;
     dishName.textContent = `${dish}`;
     block.appendChild(img);
@@ -29,17 +29,52 @@ const createMenuBlock = (dish, imgSrc) => {
 }
 
 const createMenuOn = (parent) => {
-    const menu = createElement('div');
+    const menu = document.createElement('div');
     const block1 = createMenuBlock('Meat Skewer', '/src/img/Meat-skewer.png');
-    const block2 = createMenuBlock('Prime Poultry Curry', 'src/img/Prime-poultry-curry.png');
-    const block3 = createMenuBlock('Prime Meat and Seafood Fry', 'src/img/Prime-meat-and-seafood-fry.png');
+    const block2 = createMenuBlock('Prime Poultry Curry', '/src/img/Prime-poultry-curry.png');
+    const block3 = createMenuBlock('Prime Meat and Seafood Fry', '/src/img/Prime-meat-and-seafood-fry.png');
 
-    menu
+    menu.textContent = 'MENU';
+    parent.appendChild(menu);
+    parent.appendChild(block1);
+    parent.appendChild(block2);
+    parent.appendChild(block3);
 }
 
-const createContact = (parent) => {
-    const 
+const createContactBlock = (name, role, tel, email) => {
+    const block = document.createElement('div');
+    const nameInfo = document.createElement('div');
+    const roleInfo = document.createElement('div');
+    const telInfo = document.createElement('div');
+    const emailInfo = document.createElement('div');
+    block.classList.add('contact-block');
+    nameInfo.classList.add('name-info');
+    roleInfo.classList.add('info');
+    telInfo.classList.add('info');
+    emailInfo.classList.add('info');
+    nameInfo.textContent = `${name}`;
+    roleInfo.textContent = `${role}`;
+    telInfo.textContent = `${tel}`;
+    emailInfo.textContent = `${email}`;
+    block.appendChild(nameInfo);
+    block.appendChild(roleInfo);
+    block.appendChild(telInfo);
+    block.appendChild(emailInfo);
+
+    return block;
+}
+
+const createContactOn = (parent) => {
+    const headline = document.createElement('div');
+    const block1 = createContactBlock('Peter', 'Chef', '555-555-5554', 'totallyRealEmail@notFake.com');
+    const block2 = createContactBlock('Alice', 'Manager', '555-555-5555', 'perfectlyRealEmail@notFake.com');
+    const block3 = createContactBlock('Amy', 'Waiter', '555-555-5556', 'totallyRealEmail@notFake.com');
+    headline.textContent = 'Contact';
+    parent.appendChild(headline);
+    parent.appendChild(block1);
+    parent.appendChild(block2);
+    parent.appendChild(block3);
 }
 
 
-export {buildBaseOn};
+export {buildBaseOn, createHomeOn, createMenuOn, createContactOn};

@@ -1,4 +1,6 @@
-import {buildBaseOn} from './base.js';
+import {buildBaseOn, createHomeOn, createMenuOn, createContactOn} from './base.js';
 
 const content = document.getElementById('content');
-buildBaseOn(content);
+createHomeOn(content);
+createMenuOn(content);
+createContactOn(content);
