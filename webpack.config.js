@@ -8,7 +8,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+      title: 'Link Restaurant',
+      template: './src/template.html',
     }),
   ],
   mode: 'development',
